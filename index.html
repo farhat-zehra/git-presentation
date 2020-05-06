@@ -1,224 +1,504 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>4g - Dashboard - 4G Fuse</title>
-
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
-    <!-- Font Awesome -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>4gFuse CMS</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
+<!--toggle cdn-->
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<!--custom css-->
+<link rel="stylesheet" href="css/style2.css">
 </head>
-
 <body>
 
-    <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div id="dismiss">
-                <i class="fas fa-arrow-left"></i>
-            </div>
-
-
-            <ul class="list-unstyled components">
-                <p></p>
-            </br>
-                <li>
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"  data-parent="#sidebar"><i class="fas fa-cog pr-3 ml-2"></i>overveiw <i class="right-arrow fas fa-angle-left"></i></a>
-                    <ul class="collapse list-unstyled components2" id="homeSubmenu">
-                        <li class="first-li"><a href="#">Dashboard</a></li>
-                        <li><a href="#">Realtimes Charts</a></li>
-                        <li><a href="#">Reports</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#systemSubmenu" data-toggle="collapse" aria-expanded="false" data-parent="#sidebar"><i class="fas fa-cog pr-3 ml-2"></i>System <i class="right-arrow fas fa-angle-left"></i></a>
-                    <ul class="collapse list-unstyled components2" id="systemSubmenu">
-                        <li><a href="#">Hostname</a></li>
-                        <li><a href="#">Syslog</a></li>
-                        <li><a href="#">Administration</a></li>
-                        <li><a href="#">Time</a></li>
-                        <li><a href="#">Backup / Restore</a></li>
-                        <li><a href="#">Firmware Upgrade</a></li>
-                        <li><a href="#">Reboot</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#networkSubmenu" data-toggle="collapse" aria-expanded="false" data-parent="#sidebar"><i class="fas fa-cog pr-3 ml-2"></i>Network<i class="right-arrow fas fa-angle-left"></i></a>
-                    <ul class="collapse list-unstyled components2" id="networkSubmenu">
-                        <li><a href="#">LAN</a></li>
-                        <li><a href="#">WAN</a></li>
-                        <li><a href="#">Wireless</a></li>
-                        <li><a href="#">DNS Forwarding</a></li>
-                        <li><a href="#">DHCP Static Lease</a></li>
-                        <li><a href="#">Static Routes</a></li>
-                        <li><a href="#">Dynamic DNS</a></li>
-                        <li><a href="#">Firewall</a></li>
-                        <li><a href="#">Live Streaming</a></li>
-                        <li><a href="#">Quota</a></li>
-                        <li><a href="#">Load Balancing</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#vpnSubmenu" data-toggle="collapse" aria-expanded="false" data-parent="#sidebar"><i class="fas fa-cog pr-3 ml-2"></i>VPN<i class="right-arrow fas fa-angle-left"></i></a>
-                    <ul class="collapse list-unstyled components2" id="vpnSubmenu">
-                        <li><a href="#">Bonded VPN</a></li>
-                        <li><a href="#">IPsec VPN</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#monitorSubmenu" data-toggle="collapse" aria-expanded="false" data-parent="#sidebar"><i class="fas fa-cog pr-3 ml-2"></i>Monitor<i class="right-arrow fas fa-angle-left"></i></a>
-                    <ul class="collapse list-unstyled components2" id="monitorSubmenu">
-                        <li><a href="#">Firewall</a></li>
-                        <li><a href="#">Routes</a></li>
-                        <li><a href="#">ARP Table</a></li>
-                        <li><a href="#">DHCP Lease</a></li>
-                        <li><a href="#">WiFi Connections</a></li>
-                        <li><a href="#">Load Balancing</a></li>
-                        <li><a href="#">Bonded VPN</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#toolsSubmenu" data-toggle="collapse" aria-expanded="false" data-parent="#sidebar"><i class="fas fa-cog pr-3 ml-2"></i>Tools<i class="right-arrow fas fa-angle-left"></i></a>
-                    <ul class="collapse list-unstyled components2" id="toolsSubmenu">
-                        <li><a href="#">speed Test</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#troubleshootSubmenu" data-toggle="collapse" aria-expanded="false" data-parent="#sidebar"><i class="fas fa-cog pr-3 ml-2"></i>Troubleshooting<i class="right-arrow fas fa-angle-left"></i></a>
-                    <ul class="collapse list-unstyled components2" id="troubleshootSubmenu">
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">System Log</a></li>
-                        <li><a href="#">Kernal Log</a></li>
-                        <li><a href="#">Network Diagnostics</a></li>
-                        <li><a href="#">IPsec VPN</a></li>
-                        <li><a href="#">Load Balancing</a></li>
-                        <li><a href="#">SIM</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Bonded VPN</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-           
-        </nav>
-
-        <!-- Page Content  -->
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn">
-                        <i class="fas fa-bars"></i>
-                       
-                    </button>
-                   
-                    <img src="images/brand.png" class="ml-3" style="width: 100px;">
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item mr-5 pr-5" style="margin-right: 6rem!important; color:#fff;">
-                                4g | <strong>Model:</strong> Mobile 777 | <strong>Firmware:</strong> 0.3.0 | <strong>Username:</strong><strong>Hostname:</strong> root
-				            </li>
-                            <li class="nav-item ml-5" style="color:#fff;">
-                                <i class="fas fa-sign-out-alt"></i> Logout
-                            </li>
-                            
-                        </ul>
-                    </div>
+    <div class="container-fluid">
+        <div class="row flex-nowrap wrapper">
+            <div class="col-md-2 col-1 pl-0 pr-0 collapse width  sidebar vh-100">
+                <div class="list-group border-0  text-center text-md-left" id="sidebar">
+                    <ul class="sidebar-nav bg-white">
+                        <h6 class="brand-text font-weight-light pt-3 pb-3 text">Central management server</h6>
+                          <li class="text-dark pl-3 text" style="font-weight: 600;">DASHBOARD</li>
+                          <li class=""><a href="#"class="list-group-item border-right-0 " data-parent="#sidebar"><i class="fas fa-tachometer-alt pr-2 ml-2"></i> Dashboard</a></li>
+                          <!--<p>Dummy Heading</p>-->
+                          <li class="">
+                              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="list-group-item border-right-0" data-parent="#sidebar"><i class="fas fa-chart-line pr-3 ml-2"></i>Report <i class="right-arrow fas fa-angle-left"></i></a>
+                              <ul class="collapse list-unstyled" id="homeSubmenu">
+                                  <li class="text-center"><a href="#">bandwidth_report_daily</a></li>
+                                  <li class="text-center"><a href="#">bandwidth_report_hourly</a></li>
+                                  <li class="text-center"><a href="#">consumption_report_daily</a></li>
+                                  <li class="text-center"><a href="#">consumption_report_hourly</a></li>
+                              </ul>
+                          </li>
+                          <li class=""><a href="#" class="list-group-item border-right-0" data-parent="#sidebar"><i class="pr-3 fas fa-map ml-2"></i> Maps</a></li>
+                          <li class="text-dark pl-3 text" style="font-weight: 600;">SETTING</li>
+                          <li class=""><a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="list-group-item border-right-0" data-parent="#sidebar"><i class="pr-3 fas fa-tools ml-2"></i>System <i class="right-arrow fas fa-angle-left"></i></a>
+                              <ul class="collapse list-unstyled" id="pageSubmenu">
+                                  <li class="text-center"><a href="#">Dashboard</a></li>
+                                  
+                              </ul>
+                          </li>
+                          <li class=""><a href="#settingSubmenu" data-toggle="collapse" aria-expanded="false" class="list-group-item border-right-0" data-parent="#sidebar"><i class="pr-3 fas fa-network-wired ml-2"></i>Network <i class="right-arrow fas fa-angle-left"></i></a>
+                            <ul class="collapse list-unstyled" id="settingSubmenu">
+                                <li class="text-center"><a href="#">Dashboard</a></li>
+                                <li class="text-center"><a href="#">Details</a></li>
+                                <li class="text-center"><a href="#">template</a></li>
+                            </ul>
+                          </li>
+                          <li class=""><a href="#dashboardSubmenu" data-toggle="collapse" aria-expanded="false" class="list-group-item border-right-0" data-parent="#sidebar"><i class="pr-3 fas fa-users-cog ml-2"></i>Adminstration <i class="right-arrow fas fa-angle-left"></i></a>
+                            <ul class="collapse list-unstyled" id="dashboardSubmenu">
+                                <li class="text-center"><a href="#">control-sidbar</a></li>
+                                <li class="text-center"><a href="#">main-sidebat</a></li>
+                                
+                            </ul>
+                          </li>
+                      </ul>
                 </div>
-            </nav>
+            </div>
+            <main class="col  pl-md-2 pt-2 main" style="background-color: #e9ecef;">
+                        <!-- Page Content -->
+        <div id="page-content-wrapper">
             <div class="container-fluid">
-            <div class="section-one">
-                <h3 class="ml-3">Aggregated WAN Utilization</h3>
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 mt-2 mb-2">
-                            <div class="first-div text-center">
-                                <i class="fa fa-arrow-down"></i> Downloads
-                            </div>
-                            <div class="image-div text-center">
-                                <img src="images/download-7.png" class=" mx-auto d-block">
-                                <span>0.01</span> Mb
-                            </div>
+                <div class="row">
+                  <div class="col-12 bg-primary">
+                    <a href="#" data-target=".sidebar" data-toggle="collapse"><i class="fas fa-bars fa-lg py-2 p-1"></i></a>
+                    <img src="images/brand.png" class="ml-4 mb-2">
+                    <span style="font-weight: normal; font-size: 1.5rem;" class="text-white heading">Central Management Software</span>
+                    <span class="float-right mt-2 mr-3"><i class="fas fa-sign-out-alt"></i></span>
+                    <a class=" float-right mt-2 mr-4" data-toggle="dropdown" href="#" aria-expanded="true">
+                        <i class="far fa-bell text-white"></i>
+                        <span class="badge badge-warning navbar-badge">15</span>
+                    </a>
+                    
+                  </div>
+                </div>
+            </div> 
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+        
+                        <div class="col-6 text-left d-inline-block">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
                         </div>
-                        <div class="col-sm-12 col-md-6 mt-2 mb-2">
-                            <div class="first-div text-center">
-                                <i class="fa fa-arrow-up"></i>  Uploads
-                            </div>
-                            <div class="image-div text-center">
-                                <img src="images/download-7.png" class=" mx-auto d-block">
-                                <span class="number">0.01</span> Mb
-                            </div>
+                        <div class="col-6 text-right mt-2 d-inline-block">
+                            <button class="btn btn-primary btn-xs" id="reset_filter">Reset Filter</button>
                         </div>
                     </div>
                 </div>
+            </section>
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row col-12">
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box" style="padding-right: 5px; padding-left: 0">
+                            <img src="images/download.png">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box" style="padding-right: 5px; padding-left: 0">
+                              <img src="images/download-1.png">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box" style="padding-right: 5px; padding-left: 0">
+                              <img src="images/download-2.png">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box" style="padding-right: 5px; padding-left: 0">
+                              <img src="images/download-2.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-header" style="vertical-align: middle">
+                                    <h3 class="card-title pl-3" style="margin-top: 0; margin-bottom: 0;">DC 70: 
+                                    
+                                    </h3>
+                                </div>
+                                
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6 col-lg-6">
+                                            <h5 class="text-center">Download</h5>
+                                            <div class="small-box text-center" style="padding-right: 5px; padding-left: 0">
+                                                <img src="images/green.png" style="height:150px;">
+                                                <div style="margin-top: -30px;"><span id="dc_bandwidth_dl_text">0</span><span> Mb</span></div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="col-sm-12 col-md-6 col-lg-6">
+                                            <h5 class="text-center">Upload</h5>
+                                            <div class="small-box text-center" style="padding-right: 5px; padding-left: 0">
+                                              <img src="images/blue.png" style="height:150px;">
+                                                <div style="margin-top: -30px;"><span id="dc_bandwidth_ul_text">0</span><span> Mb</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="card">
+                                <div class="card-header" style="vertical-align: middle">
+                                    <h3 class="card-title" style="margin-top: 0; margin-bottom: 0;">Mobile 777: 
+                                    
+                                    </h3>
+                                </div>
+                                
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6 col-lg-6">
+                                            <h5 class="text-center">Download</h5>
+                                            <div class="small-box text-center" style="padding-right: 5px; padding-left: 0">
+                                              <img src="images/green.png" style="height:150px;">
+                                                <div style="margin-top: -30px;"><span id="mobile_bandwidth_dl_text">0</span><span> Mb</span></div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="col-sm-12 col-md-6 col-lg-6">
+                                            <h5 class="text-center">Upload</h5>
+                                            <div class="small-box text-center" style="padding-right: 5px; padding-left: 0">
+                                              <img src="images/blue.png" style="height:150px;">
+                                                <div style="margin-top: -30px;"><span id="mobile_bandwidth_ul_text">0</span><span> Mb</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </section>
+            <section class="table-1">
+                <div class="col-md-12">
+                <a data-bind="attr: { id: $data.id + '_ref', name: $data.id + '_ref' }" id="vpn_servers_ref" name="vpn_servers_ref"></a>
+                <div class="card">
+                    <div class="card-header" style="vertical-align: middle">
+                        <h3 class="card-title d-inline-block pl-3">Bonded VPN Servers</h3>
+                        <span style="margin-left: 5px;">(<span data-bind="text: $data.data().length">1</span>)</span>
+    
+                        <div class="card-tools float-right">
+                            <div class="form-group form-inline mb-0">
+    
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm dropdown-toggle disabled btn-outline-none" data-toggle="dropdown">
+                                        Perform Bulk Action
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="" target="_blank">
+                                          Configuration Download
+                                      </a>
+                                      <a class="dropdown-item" href="" target="_blank">
+                                          FIrmware Upload
+                                      </a>
+                                      <a class="dropdown-item" href="" target="_blank">
+                                          Reboot
+                                      </a>
+                                  </div>
+                              </div>
+    
+                              
+                              <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-minus"></i></button>
+    
+                          </div>
+                      </div>
+                  </div> 
+                  <div class="card-body collapse show" id="collapseTwo">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-advance table-hover table-condensed table-header-fixed no-footer" id="vpn_servers_tab">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="width: 20px"><div class="icheck-primary">
+                                <input type="checkbox" data-bind="attr: { id: device_short_name() + $index() + 1 }, checked: $data.is_selected" id="KAR00201">
+                                <label data-bind="attr: { for: device_short_name()  + $index() + 1 }" for="KAR00201"></label>
+                            </div></th>
+                              <th scope="col" style="width: 20px">Status</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">LAN IP</th>
+                              <th scope="col">VPN IP</th>
+                              <th scope="col">Model</th>
+                              <th scope="col">Location</th>
+                             
+                              <th scope="col">  <i class="fa fa-arrow-down bandwidth-down"></i>
+                                <i class="fa fa-arrow-up bandwidth-up"></i>
+                                (Peak)</th>
+                                <th scope="col" style="width: 220px;">Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td scope="row"><div class="icheck-primary">
+                                <input type="checkbox" data-bind="attr: { id: $data.id + '_cb' }" id="vpn_servers_cb">
+                                <label data-bind="attr: { for: $data.id + '_cb' }" for="vpn_servers_cb"></label>
+                            </div></td>
+                              <td><i class="fa appliance-down fa-arrow-down" data-bind="class: status"></i></td>
+                              <td><a data-bind="attr: { href: url }, text: device_short_name" title="Appliance Details" target="_blank" href="#">KAR002</a>
+                              </td>
+                              <td>172.16.1.2
+                            </td>
+                              <td>10.20.0.1</td>
+                              <td>DC 70</td>
+                              <td>Karachi</td>
+                              <td>0 / 0</td>
+                              <td class="text-right"><a class="btn btn-default btn-sm disabled"  target="_blank" href="#">
+                                <i class="fa fa-location-arrow"></i> Show on Map </a>
+
+                            <a class="btn btn-default btn-sm " target="_blank" href="index2.html">Details</a>
+                            </td>
+                              
+                            </tr>
+                           
+                         </tbody>
+                        </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </section>
+          <section class="table-2">
+            <div class="col-md-12">
+                <a  id="vpn_clients_ref" name="vpn_clients_ref"></a>
+                <div class="card">
+                    <div class="card-header" style="vertical-align: middle">
+                        <h3 class="card-title d-inline-block pl-3" style="margin-top: 0; margin-bottom: 0;" data-bind="text: $data.label">Bonded VPN Clients</h3>
+                        <span style="margin-left: 5px;">(<span data-bind="text: $data.data().length">3</span>)</span>
+    
+                        <div class="card-tools float-right">
+                            <div class="form-group form-inline mb-0">
+    
+    
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm dropdown-toggle disabled" data-toggle="dropdown">
+                                        Perform Bulk Action
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="" target="_blank">
+                                            Configuration Download
+                                        </a>
+                                        <a class="dropdown-item" href="" target="_blank">
+                                            FIrmware Upload
+                                        </a>
+                                        <a class="dropdown-item" href="" target="_blank">
+                                            Reboot
+                                        </a>
+                                    </div>
+                                </div>
+    
+                                <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-minus"></i></button>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0 collapse show" id="collapseThree">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-advance table-hover table-condensed table-header-fixed no-footer" id="vpn_servers_tab">
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width: 20px"><div class="icheck-primary">
+                                    <input type="checkbox" data-bind="attr: { id: device_short_name() + $index() + 1 }, checked: $data.is_selected" id="KAR00201">
+                                    <label data-bind="attr: { for: device_short_name()  + $index() + 1 }" for="KAR00201"></label>
+                                </div></th>
+                                  <th scope="col" style="width: 20px">Status</th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">LAN IP</th>
+                                  <th scope="col">VPN IP</th>
+                                  <th scope="col">Model</th>
+                                  <th scope="col">Location</th>
+                                 
+                                  <th scope="col">  <i class="fa fa-arrow-down bandwidth-down"></i>
+                                    <i class="fa fa-arrow-up bandwidth-up"></i>
+                                    (Peak)</th>
+                                    <th scope="col" style="width: 220px;">Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td scope="row"><div class="icheck-primary">
+                                    <input type="checkbox" data-bind="attr: { id: $data.id + '_cb' }" id="vpn_servers_cb">
+                                    <label data-bind="attr: { for: $data.id + '_cb' }" for="vpn_servers_cb"></label>
+                                </div></td>
+                                  <td><i class="fa appliance-down fa-arrow-down" data-bind="class: status"></i></td>
+                                  <td><a data-bind="attr: { href: url }, text: device_short_name" title="Appliance Details" target="_blank" href="#">KAR001</a>
+                                  </td>
+                                  <td>192.168.0.1
+                                </td>
+                                  <td>10.20.1.2</td>
+                                  <td>Mobile 777</td>
+                                  <td>Karachi</td>
+                                  <td>0 / 0</td>
+                                  <td class="text-right"><a class="btn btn-default btn-sm disabled"  target="_blank" href="#">
+                                    <i class="fa fa-location-arrow"></i> Show on Map </a>
+    
+                                <a class="btn btn-default btn-sm " target="_blank" href="index2.html">Details</a>
+                                </td>
+                                  
+                                </tr>
+                                <tr>
+                                    <td scope="row"><div class="icheck-primary">
+                                      <input type="checkbox" data-bind="attr: { id: $data.id + '_cb' }" id="vpn_servers_cb">
+                                      <label data-bind="attr: { for: $data.id + '_cb' }" for="vpn_servers_cb"></label>
+                                  </div></td>
+                                    <td><i class="fa appliance-down fa-arrow-down" data-bind="class: status"></i></td>
+                                    <td><a data-bind="attr: { href: url }, text: device_short_name" title="Appliance Details" target="_blank" href="#">AUH001</a>
+                                    </td>
+                                    <td>192.168.1.1
+                                  </td>
+                                    <td>10.20.0.2</td>
+                                    <td>DC 70</td>
+                                    <td>Abu Dhabi</td>
+                                    <td>0 / 0</td>
+                                    <td class="text-right"><a class="btn btn-default btn-sm disabled"  target="_blank" href="#">
+                                      <i class="fa fa-location-arrow"></i> Show on Map </a>
+      
+                                  <a class="btn btn-default btn-sm " target="_blank" href="index2.html">Details</a>
+                                  </td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td scope="row"><div class="icheck-primary">
+                                      <input type="checkbox" data-bind="attr: { id: $data.id + '_cb' }" id="vpn_servers_cb">
+                                      <label data-bind="attr: { for: $data.id + '_cb' }" for="vpn_servers_cb"></label>
+                                  </div></td>
+                                    <td><i class="fa appliance-down fa-arrow-down" data-bind="class: status"></i></td>
+                                    <td><a data-bind="attr: { href: url }, text: device_short_name" title="Appliance Details" target="_blank" href="#">MUS001</a>
+                                    </td>
+                                    <td>172.16.50.1
+                                  </td>
+                                    <td>10.20.2.2</td>
+                                    <td>Mobile 777</td>
+                                    <td>Muscat</td>
+                                    <td>0 / 0</td>
+                                    <td class="text-right"><a class="btn btn-default btn-sm disabled"  target="_blank" href="#">
+                                      <i class="fa fa-location-arrow"></i> Show on Map </a>
+      
+                                  <a class="btn btn-default btn-sm " target="_blank" href="index2.html">Details</a>
+                                  </td>
+                                    
+                                  </tr>
+                               
+                             </tbody>
+                            </table>
+                          </div>
+                    </div>
+                </div>
             </div>
+          </section>
+          <section class="table-3">
+            <div class="col-md-12">
+                <a data-bind="attr: { id: $data.id + '_ref', name: $data.id + '_ref' }" id="standalone_ref" name="standalone_ref"></a>
+                <div class="card">
+                    <div class="card-header" style="vertical-align: middle">
+                        <h3 class="card-title d-inline-block pl-3" style="margin-top: 0; margin-bottom: 0;" data-bind="text: $data.label">Standalone Appliances</h3>
+                        <span style="margin-left: 5px;">(<span data-bind="text: $data.data().length">1</span>)</span>
+    
+                        <div class="card-tools float-right">
+                            <div class="form-group form-inline mb-0">
+    
+    
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm dropdown-toggle disabled" data-toggle="dropdown">
+                                        Perform Bulk Action
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="" target="_blank">
+                                            Configuration Download
+                                        </a>
+                                        <a class="dropdown-item" href="" target="_blank">
+                                            FIrmware Upload
+                                        </a>
+                                        <a class="dropdown-item" href="" target="_blank">
+                                            Reboot
+                                        </a>
+                                    </div>
+                                </div>
+    
+                                <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour"><i class="fa fa-minus"></i></button>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0 collapse show" id="collapsefour">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-advance table-hover table-condensed table-header-fixed no-footer" id="vpn_servers_tab">
+                              <thead>
+                                <tr>
+                                  <th scope="col" style="width: 20px"><div class="icheck-primary">
+                                    <input type="checkbox" data-bind="attr: { id: device_short_name() + $index() + 1 }, checked: $data.is_selected" id="KAR00201">
+                                    <label data-bind="attr: { for: device_short_name()  + $index() + 1 }" for="KAR00201"></label>
+                                </div></th>
+                                  <th scope="col" style="width: 20px">Status</th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">LAN IP</th>
+                                  <th scope="col">VPN IP</th>
+                                  <th scope="col">Model</th>
+                                  <th scope="col">Location</th>
+                                 
+                                  <th scope="col">  <i class="fa fa-arrow-down bandwidth-down"></i>
+                                    <i class="fa fa-arrow-up bandwidth-up"></i>
+                                    (Peak)</th>
+                                    <th scope="col" style="width: 220px;">Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td scope="row"><div class="icheck-primary">
+                                    <input type="checkbox" data-bind="attr: { id: $data.id + '_cb' }" id="vpn_servers_cb">
+                                    <label data-bind="attr: { for: $data.id + '_cb' }" for="vpn_servers_cb"></label>
+                                </div></td>
+                                  <td><i class="fa appliance-down fa-arrow-down" data-bind="class: status"></i></td>
+                                  <td><a data-bind="attr: { href: url }, text: device_short_name" title="Appliance Details" target="_blank" href="#">AUH003</a>
+                                  </td>
+                                  <td>192.168.0.1
+                                </td>
+                                  <td></td>
+                                  <td>Mobile 777</td>
+                                  <td>Abu Dhabi</td>
+                                  <td>0 / 0</td>
+                                  <td class="text-right"><a class="btn btn-default btn-sm disabled"  target="_blank" href="#">
+                                    <i class="fa fa-location-arrow"></i> Show on Map </a>
+    
+                                <a class="btn btn-default btn-sm" target="_blank" href="index2.html">Details</a>
+                                </td>
+                                  
+                                </tr>
+                               
+                             </tbody>
+                            </table>
+                          </div>
+                    </div>
+                </div>
             </div>
-            <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </section>
+          <section class="footer-section p-3">
+            <footer class="main-footer">
+                <div class="float-right d-none d-sm-block">
+                    <b>Version</b> 0.0.1
+                </div>
+                <strong>Copyright © 2019-2020 <a href="#">4G Fuse CMS</a>.</strong> All rights reserved.
+            </footer>
+          </section>
+    
+        </div>
+              
+            </main>
         </div>
     </div>
-
-    <div class="overlay"></div>
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-            });
-
-            $('#dismiss, .overlay').on('click', function () {
-                $('#sidebar').removeClass('active');
-                $('.overlay').removeClass('active');
-            });
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').addClass('active');
-                $('.overlay').addClass('active');
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-        });
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--toggle cdn-->
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <!--custom js-->
+    <script src="js/script.js"></script>
+    
 </body>
-
-</html>
+</html>                            
